@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Password from "./Pages/password";
+import SecondPage from './Pages/SecondPage';
+import LabirintPage from './Pages/LabirintPage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router >
+          <Routes>
+              <Route path="/" element={<Password />} />
+              <Route path="/labirint" element={<LabirintPage />} />
+              <Route path="/second" element={<SecondPage />} />
+          </Routes>
+      </Router>
   );
 }
 
