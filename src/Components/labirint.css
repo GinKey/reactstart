@@ -1,0 +1,21 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.maze {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.maze-row {
+    line-height: 0.8;
+}
+
+.maze-cell {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
