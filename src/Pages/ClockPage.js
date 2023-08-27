@@ -28,7 +28,7 @@ function Clock() {
         };
 
         const timerID = setInterval(calculateArrowPositions, 1000);
-        calculateArrowPositions(); // Вызываем сразу для начального позиционирования
+        calculateArrowPositions();
 
         return () => {
             clearInterval(timerID);
@@ -36,7 +36,9 @@ function Clock() {
     }, []);
 
     return (
-        <div className="app">
+        <div className='app' style={{flexDirection: 'column'}}>
+            <div style={{color: 'white', marginBottom: '60px', fontSize: "20px", marginTop: "-60px"}}>Время - словно компас,
+                указывающий путь через моменты и направляющий к истине.</div>
             <div className={`clock ${arrowsPositioned ? 'show' : ''}`}>
                 <div ref={secondsRef} className="hand seconds"></div>
                 <div ref={minutesRef} className="hand minutes">

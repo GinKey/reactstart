@@ -97,7 +97,7 @@ function LabirintPage() {
             style={{
                 display: 'flex',
                 justifyContent: 'center',
-                flexDirection: 'column', // Вертикальное расположение
+                flexDirection: 'column',
                 alignItems: 'center',
                 height: '100vh',
                 background: 'black',
@@ -112,10 +112,10 @@ function LabirintPage() {
                         <span className='font-roboto_mono'
                             key={cellIndex}
                             style={{
-                                width: '18px', // Увеличили ширину
-                                height: '24px', // Увеличили высоту
+                                width: '18px',
+                                height: '24px',
                                 display: 'inline-block',
-                                fontSize: '20px', // Увеличили размер шрифта
+                                fontSize: '20px',
                                 textAlign: 'center',
                                 color: cell === finishChar ? 'red' : '',
                             }}
