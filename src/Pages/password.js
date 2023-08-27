@@ -27,7 +27,7 @@ function HomePage() {
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             if (inputPassword === '') {
-                history('/labirint'); // Перенаправляем на вторую страницу
+                history('/labyrinth'); // Перенаправляем на вторую страницу
             } else {
                 setShowErrorMessage(true);
             }

@@ -12,7 +12,7 @@ function App() {
       <Router >
           <Routes>
               <Route path="/" element={<Password />} />
-              <Route path="/labirint" element={<LabyrinthPage />} />
+              <Route path="/labyrinth" element={<LabyrinthPage />} />
               <Route path="/clock" element={<ClockPage />} />
               <Route path="/second" element={<SecondPage />} />
           </Routes>
