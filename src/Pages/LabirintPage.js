@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {useNavigate} from "react-router-dom";
 import '../Components/labirint.css'
 import "../Components/fonts.css";
+import Button from 'react-bootstrap/Button';
+
 
 
 
@@ -53,8 +55,8 @@ function LabirintPage() {
         return (
             <div className={`popup-modal ${showPopup ? 'open' : ''}`}>
                 <div className="popup-content">
-                    <p>Поздравляю! ты прошел лабиринт</p>
-                    <button onClick={closePopup}>давай еще раз!</button>
+                    <p className="font-roboto">Поздравляю! Вы прошли лабиринт!</p>
+                    <Button className="font-roboto" variant="secondary" onClick={closePopup}>перезапуск</Button>
                 </div>
             </div>
         );
@@ -139,6 +141,7 @@ function LabirintPage() {
                                 textAlign: 'center',
                                 color: cell === finishChar ? 'red' : '',
                                 fontSize: '20px',
+                                zIndex: cell === playerChar ? 2 : 1,
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}
