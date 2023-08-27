@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Components/clock.css';
 import '../Components/fonts.css'
+import {useNavigate} from "react-router-dom";
 
 function Clock() {
     const [time, setTime] = useState(new Date());
@@ -8,8 +9,10 @@ function Clock() {
     const secondsRef = useRef();
     const minutesRef = useRef();
     const hoursRef = useRef();
+    const history = useNavigate();
 
     useEffect(() => {
+
         const calculateArrowPositions = () => {
             const currentTime = new Date();
             const seconds = currentTime.getSeconds();
@@ -36,6 +39,10 @@ function Clock() {
         };
     }, []);
 
+    const handleButtonClick = () => {
+        history("/second");
+    };
+
     return (
         <div className='app' style={{flexDirection: 'column'}}>
             <div className='font-roboto' style={{color: 'white', marginBottom: '60px', fontSize: "20px", marginTop: "-60px"}}>Время - словно компас,
@@ -44,6 +51,7 @@ function Clock() {
                 <div ref={secondsRef} className="hand seconds"></div>
                 <div ref={minutesRef} className="hand minutes">
                     <div className="arrow"></div>
+                    <div className="button" onClick={handleButtonClick}></div>
                 </div>
                 <div ref={hoursRef} className="hand hours"></div>
                 <div className="center-dot"></div>
