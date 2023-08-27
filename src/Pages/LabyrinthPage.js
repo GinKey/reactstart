@@ -55,7 +55,11 @@ function LabyrinthPage() {
         return (
             <div className={`popup-modal ${showPopup ? 'open' : ''}`}>
                 <div className="popup-content">
-                    <p className="font-roboto">Поздравляю! Вы прошли лабиринт!</p>
+                    <p className="font-roboto">
+                        Поздравляю! Вы покорили лабиринт! 🚀
+                        <br />
+                        Великие путешествия начинаются там, где заканчиваются границы.
+                    </p>
                     <Button className="font-roboto" variant="secondary" onClick={closePopup}>перезапуск</Button>
                 </div>
             </div>
