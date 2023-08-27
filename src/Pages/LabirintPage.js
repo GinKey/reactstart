@@ -101,19 +101,19 @@ function LabirintPage() {
                 alignItems: 'center',
                 height: '100vh',
                 background: 'black',
-                margin: 0,
-                padding: 0,
             }}
         >
-            <div className="maze" style={{ marginTop: '40px' }}>
+            <div className="maze" style={{ marginTop: '40px'}}>
             {maze.map((row, rowIndex) => (
-                <div key={rowIndex} style={{ display: 'flex' }}>
+                <div key={rowIndex} style={{ display: 'flex'}}>
                     {row.map((cell, cellIndex) => (
                         <span className='font-roboto_mono'
                             key={cellIndex}
                             style={{
-                                width: '16px',
-                                height: '24px',
+                                margin: '-2.5px',
+                                padding: '-2.5px',
+                                width: '18px',
+                                height: '26px',
                                 display: 'inline-block',
                                 fontSize: '20px',
                                 textAlign: 'center',

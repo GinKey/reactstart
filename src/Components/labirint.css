@@ -10,12 +10,9 @@
     font-size: 15px;
 }
 
-.maze-row {
-    line-height: 0.8;
-}
-
 .maze-cell {
     display: inline-block;
     width: 24px;
     height: 24px;
+
 }
