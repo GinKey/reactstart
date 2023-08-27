@@ -43,7 +43,7 @@ const finishChar = '⚑';
 
 
 
-function LabirintPage() {
+function LabyrinthPage() {
 
     const PopupModal = () => {
         const closePopup = () => {
@@ -160,4 +160,4 @@ function LabirintPage() {
     );
 }
 
-export default LabirintPage;
+export default LabyrinthPage;
