@@ -100,7 +100,7 @@ function LabirintPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 height: '100vh',
-                background: 'black',
+                background: 'white',
             }}
         >
             <div className="maze" style={{ marginTop: '40px'}}>
@@ -110,14 +110,14 @@ function LabirintPage() {
                         <span className='font-roboto_mono'
                             key={cellIndex}
                             style={{
-                                margin: '-2.5px',
-                                padding: '-2.5px',
+                                margin: '-3px',
+                                padding: '-3px',
                                 width: '18px',
                                 height: '26px',
                                 display: 'inline-block',
                                 fontSize: '20px',
                                 textAlign: 'center',
-                                color: cell === finishChar ? 'red' : 'white',
+                                color: cell === finishChar ? 'red' : 'black',
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}
