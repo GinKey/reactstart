@@ -112,7 +112,7 @@ function LabirintPage() {
                         <span className='font-roboto_mono'
                             key={cellIndex}
                             style={{
-                                width: '18px',
+                                width: '16px',
                                 height: '24px',
                                 display: 'inline-block',
                                 fontSize: '20px',
