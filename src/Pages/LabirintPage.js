@@ -100,7 +100,7 @@ function LabirintPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 height: '100vh',
-                background: 'white',
+                background: '#FFFAFA',
             }}
         >
             <div className="maze" style={{ marginTop: '40px'}}>
@@ -117,7 +117,7 @@ function LabirintPage() {
                                 display: 'inline-block',
                                 fontSize: '20px',
                                 textAlign: 'center',
-                                color: cell === finishChar ? 'red' : 'black',
+                                color: cell === finishChar ? 'red' : '',
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}
@@ -126,7 +126,7 @@ function LabirintPage() {
                 </div>
             ))}
         </div>
-            <div className="instructions" style={{ color: 'white', textAlign: 'center' }}>
+            <div className="font-roboto" style={{ color: '', textAlign: 'center' }}>
                 <p style={{ marginTop: '50px'}}>Управление:</p>
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>↑</p>
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>← ↓ →</p>
