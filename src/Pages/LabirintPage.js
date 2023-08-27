@@ -70,7 +70,7 @@ function LabirintPage() {
             setPlayerPos(newPlayerPos);
 
             if (newPlayerPos[0] === 1 && newPlayerPos[1] === 0) {
-                history('/second');
+                history('/clock');
             }
 
             if (maze[newPlayerPos[0]][newPlayerPos[1]] === finishChar) {
@@ -117,7 +117,7 @@ function LabirintPage() {
                                 display: 'inline-block',
                                 fontSize: '20px', // Увеличили размер шрифта
                                 textAlign: 'center',
-                                color: cell === finishChar ? 'red', // Применяем красный цвет к флажку
+                                color: cell === finishChar ? 'red' : '',
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}
