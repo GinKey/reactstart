@@ -38,7 +38,29 @@ const finishChar = '⚑';
 
 
 
+
+
+
 function LabirintPage() {
+
+    const PopupModal = () => {
+        const closePopup = () => {
+            setShowPopup(false);
+            window.location.reload();
+
+        };
+
+        return (
+            <div className={`popup-modal ${showPopup ? 'open' : ''}`}>
+                <div className="popup-content">
+                    <p>Поздравляю! ты прошел лабиринт</p>
+                    <button onClick={closePopup}>давай еще раз!</button>
+                </div>
+            </div>
+        );
+    };
+
+    const [showPopup, setShowPopup] = useState(false);
     const [maze, setMaze] = useState(customMaze.map(row => row.split('')));
     const [playerPos, setPlayerPos] = useState([1, 2]);
 
@@ -74,10 +96,8 @@ function LabirintPage() {
             }
 
             if (maze[newPlayerPos[0]][newPlayerPos[1]] === finishChar) {
-                alert('Ты думал будет все так просто)');
-                window.location.reload();
+                setShowPopup(true);
             }
-
         }
     }
 
@@ -87,6 +107,7 @@ function LabirintPage() {
         setMaze(newMaze);
 
         document.querySelector('.maze-page').focus();
+
     }, []);
 
     return (
@@ -115,9 +136,9 @@ function LabirintPage() {
                                 width: '18px',
                                 height: '26px',
                                 display: 'inline-block',
-                                fontSize: '20px',
                                 textAlign: 'center',
                                 color: cell === finishChar ? 'red' : '',
+                                fontSize: '20px',
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}
@@ -131,6 +152,7 @@ function LabirintPage() {
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>↑</p>
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>← ↓ →</p>
             </div>
+            <PopupModal />
     </div>
     );
 }
