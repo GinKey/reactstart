@@ -117,7 +117,7 @@ function LabirintPage() {
                                 display: 'inline-block',
                                 fontSize: '20px',
                                 textAlign: 'center',
-                                color: cell === finishChar ? 'red' : '',
+                                color: cell === finishChar ? 'red' : 'white',
                             }}
                         >
                             {cell === finishChar ? <span role="img" aria-label="Finish">{finishChar}</span> : cell}

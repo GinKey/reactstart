@@ -56,6 +56,9 @@ function Clock() {
                 <div ref={hoursRef} className="hand hours"></div>
                 <div className="center-dot"></div>
             </div>
+            <div>
+               <input></input>
+            </div>
         </div>
     );
 }
