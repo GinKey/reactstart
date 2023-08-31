@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Components/clock.css';
 import '../Components/fonts.css'
 import {useNavigate} from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function Clock() {
     const [time, setTime] = useState(new Date());
@@ -9,6 +10,8 @@ function Clock() {
     const secondsRef = useRef();
     const minutesRef = useRef();
     const hoursRef = useRef();
+    const inputRef = useRef();
+    const [errorMessage, setErrorMessage] = useState("");
     const history = useNavigate();
 
     useEffect(() => {
@@ -43,21 +46,49 @@ function Clock() {
         history("/second");
     };
 
+
+    const handleCheckTimeButton = () => {
+        const userTime = inputRef.current.value;
+        if (isValidTime(userTime)) {
+            setErrorMessage("");
+        } else {
+            setErrorMessage("Неправильное время. Взгляните в другом направлении.");
+        }
+    };
+
+    const handleInputChange = () => {
+        setErrorMessage("");
+    };
+
+    const isValidTime = (time) => {
+        return false;
+    };
+
     return (
-        <div className='app' style={{flexDirection: 'column'}}>
+        <div className='app' style={{display: "flex", flexDirection: 'column'}}>
             <div className='font-roboto' style={{color: 'white', marginBottom: '60px', fontSize: "20px", marginTop: "-60px"}}>Время - словно компас,
                 указывающий путь через моменты и направляющий к истине.</div>
-            <div className={`clock ${arrowsPositioned ? 'show' : ''}`}>
-                <div ref={secondsRef} className="hand seconds"></div>
-                <div ref={minutesRef} className="hand minutes">
-                    <div className="arrow"></div>
-                    <div className="button" onClick={handleButtonClick}></div>
+            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                <div className={`clock ${arrowsPositioned ? 'show' : ''}`}>
+                    <div ref={secondsRef} className="hand seconds"></div>
+                    <div ref={minutesRef} className="hand minutes">
+                        <div className="arrow"></div>
+                        <div className="button" onClick={handleButtonClick}></div>
+                    </div>
+                    <div ref={hoursRef} className="hand hours"></div>
+                    <div className="center-dot"></div>
                 </div>
-                <div ref={hoursRef} className="hand hours"></div>
-                <div className="center-dot"></div>
-            </div>
-            <div>
-               <input></input>
+                <div style={{ position: 'relative' }}>
+                    <input
+                        ref={inputRef}
+                        style={{ marginLeft: '100px', width: '200px' }}
+                        placeholder="Введите время (чч:мм:сс)"
+                        onInput={handleInputChange}
+                    />
+                    <Button className="font-roboto" variant="outline-secondary" onClick={handleCheckTimeButton} style={{marginTop: "-5px"}}>Проверить время</Button>
+                    {errorMessage && <div style={{ color: 'red', position: 'absolute', top: '100%',
+                        textAlign: 'center', left: '0', marginLeft: '100px', marginTop: '5px' }}>{errorMessage}</div>}
+                </div>
             </div>
         </div>
     );
