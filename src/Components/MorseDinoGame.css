@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 60vh;
     background-color: #fff;
 }
 
@@ -26,6 +26,7 @@
     background-image: url("../Components/dino.png");
     background-size: cover;
     transition: bottom 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .jump {
@@ -81,4 +82,3 @@
 .start-button:hover {
     background-color: #333;
 }
-

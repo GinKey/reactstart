@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Components/MorseDinoGame.css';
+import {useNavigate} from "react-router-dom";
 
 const MorseDinoGame = () => {
     const [isGameStarted, setIsGameStarted] = useState(true);
@@ -9,8 +10,12 @@ const MorseDinoGame = () => {
     const [obstacleIndex, setObstacleIndex] = useState(0);
     const [obstacleText, setObstacleText] = useState('');
     const [gameOver, setGameOver] = useState(false);
+    const [hasJumped, setHasJumped] = useState(false);
+    const [completedCount, setCompletedCount] = useState(0); // Счетчик завершенных элементов
     const dinoRef = useRef(null);
     const obstacleRef = useRef(null);
+    const history = useNavigate();
+
 
     const jump = () => {
         if (!isJumping && !gameOver) {
@@ -20,6 +25,7 @@ const MorseDinoGame = () => {
                 setDinoBottom(dinoBottom);
                 setIsJumping(false);
             }, 400);
+            setHasJumped(true);
         }
     };
 
@@ -29,6 +35,7 @@ const MorseDinoGame = () => {
         const handleKeyDown = (event) => {
             if (event.keyCode === 32) {
                 jump();
+                localStorage.setItem('jumpedOnce', 'true');
             }
         };
 
@@ -50,6 +57,7 @@ const MorseDinoGame = () => {
             const newIndex = (obstacleIndex + 1) % morseTexts.length;
             setObstacleIndex(newIndex);
             setObstacleText(morseTexts[newIndex]);
+            setCompletedCount((count) => count + 1); // Увеличиваем счетчик завершенных элементов
         };
 
         obstacle.addEventListener('animationiteration', handleAnimationEnd);
@@ -63,19 +71,25 @@ const MorseDinoGame = () => {
         const dino = dinoRef.current;
         const obstacle = obstacleRef.current;
 
-        const dinoRect = dino.getBoundingClientRect();
-        const obstacleRect = obstacle.getBoundingClientRect();
+        if (dino && obstacle) { // Проверяем, что элементы существуют
+            const dinoRect = dino.getBoundingClientRect();
+            const obstacleRect = obstacle.getBoundingClientRect();
 
-        if (
-            dinoRect.left < obstacleRect.left + obstacleRect.width &&
-            dinoRect.left + dinoRect.width > obstacleRect.left &&
-            dinoRect.top < obstacleRect.top + obstacleRect.height &&
-            dinoRect.top + dinoRect.height > obstacleRect.top
-        ) {
-            setGameOver(true);
-            obstacle.style.animation = 'none';
-            window.alert('Игра завершена. Вы столкнулись с препятствием.');
-            window.location.reload();
+            const jumpedOnce = localStorage.getItem('jumpedOnce') === 'true';
+
+            if (
+                (jumpedOnce || isJumping) &&
+                dinoRect.left < obstacleRect.left + obstacleRect.width &&
+                dinoRect.left + dinoRect.width > obstacleRect.left &&
+                dinoRect.top < obstacleRect.top + obstacleRect.height &&
+                dinoRect.top + dinoRect.height > obstacleRect.top
+            ) {
+                setGameOver(true);
+                obstacle.style.animation = 'none';
+                localStorage.removeItem('jumpedOnce');
+                window.alert('Игра завершена. Вы столкнулись с препятствием.');
+                window.location.reload();
+            }
         }
     };
 
@@ -91,8 +105,15 @@ const MorseDinoGame = () => {
 
         setTimeout(() => {
             requestAnimationFrame(updateGame);
-        }, 1000 / 60); // 60 FPS
+        }, 1000 / 60);
     };
+
+    useEffect(() => {
+        if (completedCount === morseTexts.length && !hasJumped) {
+            history("/second")
+        }
+    }, [completedCount, hasJumped, morseTexts.length, history]);
+
 
     useEffect(() => {
         requestAnimationFrame(updateGame);
@@ -115,11 +136,14 @@ const MorseDinoGame = () => {
                     {obstacleText}
                 </div>
                 <div className="ground" />
+                <div className="controls">
+                    <div className="controls-text" style={{ marginLeft: "50px" }}>
+                        прыжок - SPACE
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
-
-
 
 export default MorseDinoGame;
