@@ -38,11 +38,6 @@ const mazeWidth = customMaze[0].length;
 const playerChar = '🚀';
 const finishChar = '⚑';
 
-
-
-
-
-
 function LabyrinthPage() {
 
     const PopupModal = () => {
