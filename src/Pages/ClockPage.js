@@ -43,7 +43,7 @@ function Clock() {
     }, []);
 
     const handleButtonClick = () => {
-        history("/second");
+        history("/dino");
     };
 
 
@@ -78,16 +78,16 @@ function Clock() {
                     <div ref={hoursRef} className="hand hours"></div>
                     <div className="center-dot"></div>
                 </div>
-                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'relative', marginLeft: "120px" }}>
                     <input
                         ref={inputRef}
-                        style={{ marginLeft: '100px', width: '200px' }}
+                        style={{ width: '200px' }}
                         placeholder="Введите время (чч:мм:сс)"
                         onInput={handleInputChange}
                     />
                     <Button className="font-roboto" variant="outline-secondary" onClick={handleCheckTimeButton} style={{marginTop: "-5px"}}>Проверить время</Button>
                     {errorMessage && <div style={{ color: 'red', position: 'absolute', top: '100%',
-                        textAlign: 'center', left: '0', marginLeft: '100px', marginTop: '5px' }}>{errorMessage}</div>}
+                        textAlign: 'center', marginTop: '5px' }}>{errorMessage}</div>}
                 </div>
             </div>
         </div>
