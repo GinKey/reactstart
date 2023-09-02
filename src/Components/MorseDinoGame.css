@@ -41,7 +41,7 @@
     background-color: white;
     justify-content: center;
     align-items: flex-end; /* Выравнивание текста внизу блока */
-    line-height: 40px; /* Установка высоты линии текста равной высоте блока */
+    line-height: 10px; /* Установка высоты линии текста равной высоте блока */
     font-size: 40px; /* Размер текста по вашему желанию */
     image-rendering: pixelated;
     animation: moveObstacle 5s linear infinite; /* Keep the animation */

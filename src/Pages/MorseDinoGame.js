@@ -29,7 +29,7 @@ const MorseDinoGame = () => {
         }
     };
 
-    const morseTexts = ['-.', '.', '.--.', '.-.', '-.--', '--.', '.-', '.---'];
+    const morseTexts = ['_ .', '.', '. _ _ .', '. _ .', '_ . _ _', '_ _ .', '. _', '. _ _ _'];
 
     useEffect(() => {
         const handleKeyDown = (event) => {
