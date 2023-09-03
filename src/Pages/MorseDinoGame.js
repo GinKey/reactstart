@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../Components/MorseDinoGame.css';
 import {useNavigate} from "react-router-dom";
 import '../Components/fonts.css'
+import ReactModal from 'react-modal';
+import Button from "react-bootstrap/Button";
+
 
 const MorseDinoGame = () => {
     const [isGameStarted, setIsGameStarted] = useState(true);
@@ -17,6 +20,7 @@ const MorseDinoGame = () => {
     const obstacleRef = useRef(null);
     const history = useNavigate();
     const [isSpacePressed, setIsSpacePressed] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
 
     const jump = () => {
@@ -55,6 +59,7 @@ const MorseDinoGame = () => {
 
         const initialIndex = obstacleIndex % morseTexts.length;
         setObstacleText(morseTexts[initialIndex]);
+
         obstacle.style.animation = 'moveObstacle 2s linear infinite';
 
         const handleAnimationEnd = () => {
@@ -91,8 +96,7 @@ const MorseDinoGame = () => {
                 setGameOver(true);
                 obstacle.style.animation = 'none';
                 localStorage.removeItem('jumpedOnce');
-                window.alert('Игра завершена. Вы столкнулись с препятствием.');
-                window.location.reload();
+                setIsModalOpen(true);
             }
         }
     };
@@ -140,11 +144,23 @@ const MorseDinoGame = () => {
                     {obstacleText}
                 </div>
                 <div className="ground" />
-                <div className={`controls ${isSpacePressed ? 'space-pressed' : ''}`}>                    <div className="controls-text">
+                <div className={`controls ${isSpacePressed ? 'space-pressed' : ''}`}>
+                    <div className="controls-text">
                        <span className="font-roboto">SPACE - прыжок</span>
                     </div>
                 </div>
             </div>
+            <ReactModal
+                isOpen={isModalOpen}
+                onRequestClose={() => setIsModalOpen(false)}
+                contentLabel="Game Over Modal"
+                className="modal-content"
+                overlayClassName="modal-overlay"
+            >
+                <h2 className="font-roboto">Игра завершена</h2>
+                <p className="font-roboto">Вы столкнулись с препятствием.</p>
+                <Button className="font-roboto" variant="secondary" onClick={() => window.location.reload()}>перезапуск</Button>
+            </ReactModal>
         </div>
     );
 };
