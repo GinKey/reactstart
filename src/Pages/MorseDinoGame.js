@@ -62,7 +62,7 @@ const MorseDinoGame = () => {
         const initialIndex = obstacleIndex % morseTexts.length;
         setObstacleText(morseTexts[initialIndex]);
 
-        obstacle.style.animation = 'moveObstacle 1.8s linear infinite';
+        obstacle.style.animation = 'moveObstacle 2.5s linear infinite';
 
         const handleAnimationEnd = () => {
             const newIndex = (obstacleIndex + 1) % morseTexts.length;
@@ -120,6 +120,7 @@ const MorseDinoGame = () => {
 
     useEffect(() => {
         if (completedCount === morseTexts.length && !hasJumped) {
+
             history("/second")
         }
     }, [completedCount, hasJumped, morseTexts.length, history]);
