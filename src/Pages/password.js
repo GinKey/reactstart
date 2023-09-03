@@ -28,7 +28,12 @@ function HomePage() {
         if (event.key === 'Enter') {
             if (inputPassword === '') {
                 history('/labyrinth'); // Перенаправляем на вторую страницу
-            } else {
+            }
+            else if (inputPassword === '1010' || inputPassword === '101010')
+            {
+                history('/second')
+            }
+            else {
                 setShowErrorMessage(true);
             }
         }

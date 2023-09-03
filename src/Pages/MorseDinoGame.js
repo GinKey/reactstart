@@ -120,8 +120,7 @@ const MorseDinoGame = () => {
 
     useEffect(() => {
         if (completedCount === morseTexts.length && !hasJumped) {
-
-            history("/second")
+            history("/pagefive")
         }
     }, [completedCount, hasJumped, morseTexts.length, history]);
 

@@ -1,0 +1,63 @@
+/* MyPage.css */
+
+.MyPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+    height: 100%; /* Увеличиваем высоту черной и белой половин */
+
+}
+
+.blackHalf {
+    background-color: black;
+}
+
+.whiteHalf {
+    background-color: white;
+    color: black;
+}
+
+.grayBox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECECEC;
+    width: 220px;
+    height: 80px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.buttonContainer {
+    display: flex;
+}
+
+
+.number {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.yesButton, .noButton {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    margin: 5px;
+}
