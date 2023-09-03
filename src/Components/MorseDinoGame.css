@@ -95,7 +95,7 @@
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    max-width: 400px; /* Максимальная ширина окна */
+    max-width: 400px;
 }
 
 
@@ -112,10 +112,10 @@
 }
 
 .modal-content Button {
-    max-width: 200px; /* Максимальная ширина кнопки */
-    margin: 0 auto; /* Устанавливаем автоматичесные отступы по горизонтали для центрирования */
-    padding: 10px 10px; /* Вертикальный отступ кнопки */
-    font-size: 16px; /* Размер шрифта кнопки */
-    border-radius: 10px; /* Закругленные углы кнопки */
-    cursor: pointer; /* Показываем указатель при наведении */
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
 }

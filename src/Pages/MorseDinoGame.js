@@ -15,7 +15,7 @@ const MorseDinoGame = () => {
     const [obstacleText, setObstacleText] = useState('');
     const [gameOver, setGameOver] = useState(false);
     const [hasJumped, setHasJumped] = useState(false);
-    const [completedCount, setCompletedCount] = useState(0); // Счетчик завершенных элементов
+    const [completedCount, setCompletedCount] = useState(0);
     const dinoRef = useRef(null);
     const obstacleRef = useRef(null);
     const history = useNavigate();
@@ -37,7 +37,9 @@ const MorseDinoGame = () => {
         }
     };
 
-    const morseTexts = ['_ .', '.', '. _ _ .', '. _ .', '_ . _ _', '_ _ .', '. _', '. _ _ _'];
+    const morseTexts = ['_ .', '.', '. _ _ .', '. _ .', '_ . _ _', '_ _ .', '. _', '. _ _ _',
+        '_ .', '.', '. _ _ .', '. _ .', '_ . _ _', '_ _ .', '. _', '. _ _ _',
+        '_ .', '.', '. _ _ .', '. _ .', '_ . _ _', '_ _ .', '. _', '. _ _ _'];
 
     useEffect(() => {
         const handleKeyDown = (event) => {
