@@ -60,7 +60,7 @@ const MorseDinoGame = () => {
         const initialIndex = obstacleIndex % morseTexts.length;
         setObstacleText(morseTexts[initialIndex]);
 
-        obstacle.style.animation = 'moveObstacle 2s linear infinite';
+        obstacle.style.animation = 'moveObstacle 1.8s linear infinite';
 
         const handleAnimationEnd = () => {
             const newIndex = (obstacleIndex + 1) % morseTexts.length;
