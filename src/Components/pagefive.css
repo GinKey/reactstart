@@ -15,18 +15,18 @@
     justify-content: center;
     align-items: center;
     font-size: 48px;
-    color: white;
+    color: #FFFAFA;
     height: 100%; /* Увеличиваем высоту черной и белой половин */
 
 }
 
 .blackHalf {
-    background-color: black;
+    background-color: #121212;
 }
 
 .whiteHalf {
-    background-color: white;
-    color: black;
+    background-color: #FFFAFA;
+    color: #121212;
 }
 
 .grayBox {
