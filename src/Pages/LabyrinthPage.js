@@ -150,7 +150,7 @@ function LabyrinthPage() {
             ))}
         </div>
             <div className="font-roboto" style={{ color: '', textAlign: 'center' }}>
-                <p style={{ marginTop: '50px'}}>Управление:</p>
+                <p style={{ marginTop: '20px'}}>Управление:</p>
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>↑</p>
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>← ↓ →</p>
             </div>

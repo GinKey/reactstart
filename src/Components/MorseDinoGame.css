@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    height: 50vh;
     background-color: #fff;
 }
 
@@ -11,10 +11,27 @@
     position: relative;
     width: 600px;
     height: 200px;
-    overflow: hidden;
     margin-bottom: 20px;
     display: flex;
     justify-content: flex-start;
+}
+
+.controls {
+    position: absolute;
+    bottom: -80px;
+    left: 150px;
+    right: 150px;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    background-color: rgba(25, 35, 57, 0.36);
+    border-radius: 10px;
+    width: auto;
+}
+
+.controls.space-pressed {
+    background-color: rgba(25, 35, 57, 0.6); /* Новый цвет фона при нажатии клавиши "пробел" */
+    opacity: 0.9; /* Увеличиваем прозрачность при нажатии клавиши "пробел" */
 }
 
 .dino {

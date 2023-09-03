@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Components/MorseDinoGame.css';
 import {useNavigate} from "react-router-dom";
+import '../Components/fonts.css'
 
 const MorseDinoGame = () => {
     const [isGameStarted, setIsGameStarted] = useState(true);
@@ -15,15 +16,18 @@ const MorseDinoGame = () => {
     const dinoRef = useRef(null);
     const obstacleRef = useRef(null);
     const history = useNavigate();
+    const [isSpacePressed, setIsSpacePressed] = useState(false);
 
 
     const jump = () => {
         if (!isJumping && !gameOver) {
             setIsJumping(true);
             setDinoBottom(dinoBottom + 100);
+            setIsSpacePressed(true); // Показать затемнение при прыжке
             setTimeout(() => {
                 setDinoBottom(dinoBottom);
                 setIsJumping(false);
+                setIsSpacePressed(false); // Показать затемнение при прыжке
             }, 400);
             setHasJumped(true);
         }
@@ -136,9 +140,8 @@ const MorseDinoGame = () => {
                     {obstacleText}
                 </div>
                 <div className="ground" />
-                <div className="controls">
-                    <div className="controls-text" style={{ marginLeft: "50px" }}>
-                        прыжок - SPACE
+                <div className={`controls ${isSpacePressed ? 'space-pressed' : ''}`}>                    <div className="controls-text">
+                       <span className="font-roboto">SPACE - прыжок</span>
                     </div>
                 </div>
             </div>
