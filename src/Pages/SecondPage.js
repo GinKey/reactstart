@@ -58,19 +58,35 @@ function SecondPage() {
 
     return (
         <div className={'app'}>
-            {cardList.map(card =>
-                <div
-                    onDragStart={(e) => dragStartHandler(e, card)}
-                    onDragLeave={(e) => dragEndHandler(e)}
-                    onDragEnd={(e) => dragEndHandler(e)}
-                    onDragOver={(e) => dragOverHandler(e)}
-                    onDrop={(e) => dropHandler(e, card)}
-                    draggable={true}
-                    className={'card'}>
-                    {card.text}
-                </div>
-            )}
-
+            {/*{cardList.map(card =>*/}
+            {/*    <div*/}
+            {/*        onDragStart={(e) => dragStartHandler(e, card)}*/}
+            {/*        onDragLeave={(e) => dragEndHandler(e)}*/}
+            {/*        onDragEnd={(e) => dragEndHandler(e)}*/}
+            {/*        onDragOver={(e) => dragOverHandler(e)}*/}
+            {/*        onDrop={(e) => dropHandler(e, card)}*/}
+            {/*        draggable={true}*/}
+            {/*        className={'card'}>*/}
+            {/*        {card.text}*/}
+            {/*    </div>*/}
+            {/*)}*/}
+            <div
+                style={{
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    fontSize: '36px',
+                    color: 'white',
+                    zIndex: '999',
+                }}>
+                Данный уровень еще не готов, спасибо за прохождение!
+            </div>
         </div>
     );
 }
