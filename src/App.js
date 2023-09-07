@@ -9,6 +9,7 @@ import MorseDinoGame from './Pages/MorseDinoGame';
 import PageFive from "./Pages/PageFive";
 import {useEffect, useState} from "react";
 
+
 function App() {
     const [isMobile, setIsMobile] = useState(false);
 
