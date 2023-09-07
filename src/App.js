@@ -34,7 +34,7 @@ function App() {
                     <Route
                         path="/"
                         element={
-                            <div>
+                            <div className="phoneApp">
                                 <p>
                                     Зайдите через компьютер по этой <a href="https://reactstart-zeta.vercel.app">https://reactstart-zeta.vercel.app</a>
                                 </p>
