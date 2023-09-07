@@ -36,7 +36,7 @@ function App() {
                         element={
                             <div>
                                 <p>
-                                    Зайдите через компьютер по этой <a href="https://reactstart-zeta.vercel.app">ссылке</a>
+                                    Зайдите через компьютер по этой <a href="https://reactstart-zeta.vercel.app">https://reactstart-zeta.vercel.app</a>
                                 </p>
                             </div>
                         }
