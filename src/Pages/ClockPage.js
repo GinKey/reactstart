@@ -12,6 +12,7 @@ function Clock() {
     const hoursRef = useRef();
     const inputRef = useRef();
     const [errorMessage, setErrorMessage] = useState("");
+    const [attemptsCount, setAttemptsCount] = useState(0); // Добавлено состояние для подсчета попыток
     const history = useNavigate();
 
     useEffect(() => {
@@ -50,7 +51,14 @@ function Clock() {
     const handleCheckTimeButton = () => {
         const userTime = inputRef.current.value;
         if (isValidTime(userTime)) {
-            setErrorMessage("Bruh время верно, но это не ответ(");
+            setAttemptsCount(attemptsCount + 1);
+            if (attemptsCount >= 5) {
+                setErrorMessage("Вы уже ввели правильное время более 5 раз! Время не ответ, ответ в часах!");
+            } else if (attemptsCount >= 3) {
+                setErrorMessage("Вы ввели правильное время более 3 раз! но это не ответ!!!");
+            } else {
+                setErrorMessage("Время верно, но это не ответ(");
+            }
         } else {
             setErrorMessage("Неправильное время. Смотрите на часы и следите за направлением.");
         }
