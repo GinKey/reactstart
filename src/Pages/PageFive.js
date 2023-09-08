@@ -12,8 +12,8 @@ function PageFive() {
 
     return (
         <div className="MyPage">
-            <div className="hiddenText blackText">Вернись к воспоминаниям, найди связь в прошлом...</div>
-            <div className="hiddenText whiteText">...и ключ станет ясным. (Всё связано)</div>
+            <div className="hiddenText blackText">Вернитесь к воспоминаниям, обнаружьте связь во всех испытаниях...</div>
+            <div className="hiddenText whiteText">...и пароль к разгадке станет ясным. (Всё связано)</div>
             <div className="half blackHalf">1</div>
             <div className="half whiteHalf">0</div>
             <div className="grayBox">
