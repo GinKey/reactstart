@@ -55,7 +55,7 @@ function Clock() {
             if (attemptsCount >= 5) {
                 setErrorMessage("Вы уже ввели правильное время более 5 раз! Время не ответ, ответ в часах!");
             } else if (attemptsCount >= 3) {
-                setErrorMessage("Вы ввели правильное время более 3 раз! но это не ответ!!!");
+                setErrorMessage("Вы ввели правильное время более 3 раз! Но это не ответ!!!");
             } else {
                 setErrorMessage("Время верно, но это не ответ(");
             }

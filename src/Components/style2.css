@@ -1,27 +1,79 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
 .app{
-    width: 100vw;
+    background: #171717;
     height: 100vh;
+}
+
+.finishMessage{
+    color: #FFF;
+    text-align: center;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-
-.card {
-    width: 200px;
-    height: 300px;
-    border-radius: 12px;
-    border: 5px solid;
+.creator{
+    color: #C2C2C2;
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 20px;
-    cursor: grab;
+}
+
+.main_text{
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #F5F5F5;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.elli
+{
+    color: #C2C2C2;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+}
+
+span.ellink{
+    color: #C2C2C2;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
 }

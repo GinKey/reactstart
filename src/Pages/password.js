@@ -22,12 +22,11 @@ function HomePage() {
     const [inputPassword, setInputPassword] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
 
-    const history = useNavigate(); // Получаем объект истории
-
+    const history = useNavigate();
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             if (inputPassword === '') {
-                history('/labyrinth'); // Перенаправляем на вторую страницу
+                history('/labyrinth');
             }
             else if (inputPassword === '1010' || inputPassword === '101010')
             {
