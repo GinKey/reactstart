@@ -3,7 +3,8 @@ import {useNavigate} from "react-router-dom";
 import '../Components/labirint.css'
 import "../Components/fonts.css";
 import Button from 'react-bootstrap/Button';
-
+import blackhint from "../Components/Black_hint.svg";
+import "../Components/hint.css"
 
 
 
@@ -155,6 +156,12 @@ function LabyrinthPage() {
                 <p style={{ fontSize: '24px', margin: '-10px 0' }}>← ↓ →</p>
             </div>
             <PopupModal />
+            <div>
+                <a href="https://t.me/c/1973478372/9" className="tooltip-icon">
+                    <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={blackhint} alt="вторая подсказка"/>
+                    <span className="tooltip-text">Воспользоваться подсказкой</span>
+                </a>
+            </div>
     </div>
     );
 }

@@ -3,6 +3,8 @@ import '../Components/clock.css';
 import '../Components/fonts.css'
 import {useNavigate} from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import whitehint from "../Components/white_hint.svg";
+import "../Components/hint.css"
 
 function Clock() {
     const [time, setTime] = useState(new Date());
@@ -109,6 +111,12 @@ function Clock() {
                             textAlign: 'center', marginTop: '5px' }}>{errorMessage}</div>
                     )}
                 </div>
+            </div>
+            <div>
+                <a href="https://t.me/c/1973478372/10" className="tooltip-icon">
+                    <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={whitehint} alt="третья подсказка"/>
+                    <span className="tooltip-text">Воспользоваться подсказкой</span>
+                </a>
             </div>
         </div>
     );

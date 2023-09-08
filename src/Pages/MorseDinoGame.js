@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom";
 import '../Components/fonts.css'
 import ReactModal from 'react-modal';
 import Button from "react-bootstrap/Button";
+import blackhint from "../Components/Black_hint.svg";
+import "../Components/hint.css"
 
 
 const MorseDinoGame = () => {
@@ -162,6 +164,12 @@ const MorseDinoGame = () => {
                 <p className="font-roboto">Вы столкнулись с препятствием.</p>
                 <Button className="font-roboto" variant="secondary" onClick={() => window.location.reload()}>перезапуск</Button>
             </ReactModal>
+            <div>
+                <a href="https://t.me/c/1973478372/11" className="tooltip-icon">
+                    <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={blackhint} alt="четвертая подсказка"/>
+                    <span className="tooltip-text">Воспользоваться подсказкой</span>
+                </a>
+            </div>
         </div>
     );
 };

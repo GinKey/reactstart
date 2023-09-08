@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import "../Components/style.css";
 import "../Components/fonts.css";
 import background from "../Components/background_dark.png";
+import whitehint from "../Components/white_hint.svg"
+import "../Components/hint.css"
 
 const appStyle = {
     backgroundImage: `url(${background})`,
@@ -45,7 +47,13 @@ function HomePage() {
 
     return (
         <div style={appStyle}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+            <div>
+                <a href="https://t.me/c/1973478372/8" className="tooltip-icon">
+                    <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={whitehint} alt="первая подсказка"/>
+                    <span className="tooltip-text">Воспользоваться подсказкой</span>
+                </a>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
 
             <div className="input-container" style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
