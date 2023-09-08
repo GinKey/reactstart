@@ -77,3 +77,16 @@ span.ellink{
     line-height: normal;
     text-decoration-line: underline;
 }
+
+@media (max-width: 1200px) {
+    .hide-on-small-screen {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .hide-on-small-screen2 {
+        display: none;
+    }
+}
+

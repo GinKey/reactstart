@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../Components/style2.css'
 import '../Components/fonts.css'
 import git_img from '../Components/final_page_icons/git_img.svg'
@@ -17,7 +17,7 @@ function SecondPage() {
                         Спасибо за прохождение первого сезона!
                     </p>
                     <img style={{position: "absolute", marginTop:"70px", marginLeft: "700px"}} src={vector} alt="лого"/>
-                    <img style={{position: "absolute", marginTop:"70px", marginRight: "70%"}} src={vectorLeft} alt="вектор1"/>
+                    <img className="hide-on-small-screen" style={{position: "absolute", marginTop:"70px", marginRight: "65%"}} src={vectorLeft} alt="вектор1"/>
                 </div>
                 <div className="creator">
                     <p  style={{marginTop: "50px", width: "534px", height:"63px"}}>
@@ -48,7 +48,7 @@ function SecondPage() {
                 </div>
                 <div className="elli" style={{marginTop: "61px"}}>
                     <p style={{width: "382px"}}>Отдельная благодарность лучшему дизайнеру <span className="ellink">ellink</span></p>
-                    <img style={{position: "absolute", marginTop:"-350px", marginLeft: "88%"}} src={vectorBot} alt="вектор2"/>
+                    <img className="hide-on-small-screen2" style={{position: "absolute", marginTop:"-350px", marginLeft: "88%"}} src={vectorBot} alt="вектор2"/>
                 </div>
             </div>
         </div>
