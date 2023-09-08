@@ -157,7 +157,7 @@ function LabyrinthPage() {
             </div>
             <PopupModal />
             <div>
-                <a href="https://t.me/c/1973478372/9" className="tooltip-icon">
+                <a href="https://t.me/MindHubb/9" className="tooltip-icon">
                     <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={blackhint} alt="вторая подсказка"/>
                     <span className="tooltip-text">Воспользоваться подсказкой</span>
                 </a>

@@ -40,9 +40,9 @@ function SecondPage() {
                     </div>
                     <div  style={{marginLeft: "107px"}}>
                         <div>
-                            <a href="https://t.me/+jRhyW-iKyhA1ZDMy">
+                            <a href="https://t.me/MindHubb">
                                 <img src={tg_img} alt="Телеграмм лого"/></a>
-                            <a style={{marginLeft: "10px"}} href="https://t.me/+jRhyW-iKyhA1ZDMy">MindHub</a>
+                            <a style={{marginLeft: "10px"}} href="https://t.me/MindHubb">MindHub</a>
                         </div>
                     </div>
                 </div>

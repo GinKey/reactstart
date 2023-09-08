@@ -48,7 +48,7 @@ function HomePage() {
     return (
         <div style={appStyle}>
             <div>
-                <a href="https://t.me/c/1973478372/8" className="tooltip-icon">
+                <a href="https://t.me/MindHubb/8" className="tooltip-icon">
                     <img style={{position: "fixed", top: "20px", right: "20px", width: "50px", height: "50px"}} src={whitehint} alt="первая подсказка"/>
                     <span className="tooltip-text">Воспользоваться подсказкой</span>
                 </a>
