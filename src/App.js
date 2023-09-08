@@ -37,9 +37,9 @@ function App() {
                         element={
                             <div className="phoneApp">
                                 <p>
-                                    "Извините, мобильная версия пока не готова.
-                                    <br>Для полного доступа, пожалуйста, используйте компьютер и перейдите по этой ссылке:</br>
-                                    <a href='https://reactstart-zeta.vercel.app'>https://reactstart-zeta.vercel.app</a>.
+                                    Извините, мобильная версия пока не готова.<br />
+                                    Для полного доступа, пожалуйста, используйте компьютер и перейдите по этой ссылке:<br />
+                                    <a href='https://reactstart-zeta.vercel.app'>https://reactstart-zeta.vercel.app</a>
                                 </p>
                             </div>
                         }
