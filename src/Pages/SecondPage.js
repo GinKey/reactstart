@@ -47,7 +47,7 @@ function SecondPage() {
                     </div>
                 </div>
                 <div className="elli" style={{marginTop: "61px"}}>
-                    <p style={{width: "382px"}}>Отдельная благодарность лучшему дизайнеру <span className="ellink">ellink</span></p>
+                    <p style={{width: "382px"}}>Отдельная благодарность лучшему дизайнеру <a href="https://github.com/ell-ink"><span className="ellink">ellink</span></a></p>
                     <img className="hide-on-small-screen2" style={{position: "absolute", marginTop:"-350px", marginLeft: "88%"}} src={vectorBot} alt="вектор2"/>
                 </div>
             </div>
