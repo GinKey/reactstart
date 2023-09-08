@@ -50,9 +50,9 @@ function Clock() {
     const handleCheckTimeButton = () => {
         const userTime = inputRef.current.value;
         if (isValidTime(userTime)) {
-            setErrorMessage("");
+            setErrorMessage("Bruh время верно, но это не ответ(");
         } else {
-            setErrorMessage("Неправильное время. Взгляните в другом направлении.");
+            setErrorMessage("Неправильное время. Смотрите на часы и следите за направлением.");
         }
     };
 
@@ -60,8 +60,18 @@ function Clock() {
         setErrorMessage("");
     };
 
+
     const isValidTime = (time) => {
-        return false;
+        // Разбиваем введенное время на часы и минуты
+        const [hours, minutes] = time.split(":").map(Number);
+
+        // Получаем текущее время
+        const currentTime = new Date();
+        const currentHours = currentTime.getHours();
+        const currentMinutes = currentTime.getMinutes();
+
+        // Сравниваем введенное время с текущим временем
+        return hours === currentHours && minutes === currentMinutes;
     };
 
     return (
@@ -78,16 +88,18 @@ function Clock() {
                     <div ref={hoursRef} className="hand hours"></div>
                     <div className="center-dot"></div>
                 </div>
-                <div style={{ position: 'relative', marginLeft: "120px" }}>
+                <div style={{ position: 'relative', marginLeft: "120px", display: 'flex', flexDirection: 'column'}}>
                     <input
                         ref={inputRef}
                         style={{ width: '200px' }}
                         placeholder="Введите время (чч:мм:сс)"
                         onInput={handleInputChange}
                     />
-                    <Button className="font-roboto" variant="outline-secondary" onClick={handleCheckTimeButton} style={{marginTop: "-5px"}}>Проверить время</Button>
-                    {errorMessage && <div style={{ color: 'red', position: 'absolute', top: '100%',
-                        textAlign: 'center', marginTop: '5px' }}>{errorMessage}</div>}
+                    <Button className="font-roboto" variant="outline-secondary" onClick={handleCheckTimeButton} style={{marginTop: "5px"}}>Проверить время</Button>
+                    {errorMessage && (
+                        <div style={{ color: errorMessage.includes("верно") ? 'green' : 'red', position: 'absolute', top: '100%',
+                            textAlign: 'center', marginTop: '5px' }}>{errorMessage}</div>
+                    )}
                 </div>
             </div>
         </div>
