@@ -105,7 +105,7 @@ function Clock() {
                     />
                     <Button className="font-roboto" variant="outline-secondary" onClick={handleCheckTimeButton} style={{marginTop: "5px"}}>Проверить время</Button>
                     {errorMessage && (
-                        <div style={{ color: errorMessage.includes("верно") ? 'green' : 'red', position: 'absolute', top: '100%',
+                        <div style={{ color: errorMessage.includes("ответ") ? 'green' : 'red', position: 'absolute', top: '100%',
                             textAlign: 'center', marginTop: '5px' }}>{errorMessage}</div>
                     )}
                 </div>
