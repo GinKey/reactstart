@@ -37,7 +37,9 @@ function App() {
                         element={
                             <div className="phoneApp">
                                 <p>
-                                    Зайдите через компьютер по этой ссылке: <a href="https://reactstart-zeta.vercel.app">https://reactstart-zeta.vercel.app</a>
+                                    Извините, мобильная версия пока не готова.
+                                    Для полного доступа, пожалуйста, используйте компьютер и перейдите по этой ссылке:
+                                    <a href='https://reactstart-zeta.vercel.app'>https://reactstart-zeta.vercel.app</a>.
                                 </p>
                             </div>
                         }
