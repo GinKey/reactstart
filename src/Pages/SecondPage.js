@@ -11,10 +11,13 @@ import vectorLeft from  '../Components/final_page_icons/Vector_left.svg'
 function SecondPage() {
     return (
         <div className="app">
+            <audio autoPlay loop>
+                <source src="/audio/background.mp3" type="audio/mpeg" />
+            </audio>
             <div className="font-Montserrat">
                 <div className="finishMessage">
                     <p style={{marginTop: "185px", width: "534px", height:"98px"}}>
-                        Спасибо за прохождение первого сезона!
+                        Спасибо за прохождение!
                     </p>
                     <img style={{position: "absolute", marginTop:"70px", marginLeft: "700px"}} src={vector} alt="лого"/>
                     <img className="hide-on-small-screen" style={{position: "absolute", marginTop:"70px", marginRight: "65%"}} src={vectorLeft} alt="вектор1"/>
@@ -26,8 +29,8 @@ function SecondPage() {
                 </div>
                 <div className="main_text">
                     <p style={{marginTop: "26px", width: "680px"}}>
-                        Хотелось бы услышать ваше мнение об этом проекте и идеи для будущих сезонов.
-                        Не стесняйтесь оставлять свой отзыв и делиться вашими впечатлениями с нами.
+                        Хотелось бы услышать ваше мнение об этом проекте и идеи!
+                        Не стесняйтесь оставлять свой отзыв и делиться вашими впечатлениями.
                     </p>
                 </div>
                 <div className="links" style={{marginTop: "87px"}}>
