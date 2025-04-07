@@ -23,17 +23,18 @@ function SecondPage() {
                     <img className="hide-on-small-screen" style={{position: "absolute", marginTop:"70px", marginRight: "65%"}} src={vectorLeft} alt="вектор1"/>
                 </div>
                 <div className="creator">
-                    <p  style={{marginTop: "50px", width: "534px", height:"63px"}}>
+                    <p  style={{width: "534px", height:"63px"}}>
                         Создатель - Andrey Zharov
                     </p>
                 </div>
                 <div className="main_text">
                     <p style={{marginTop: "26px", width: "680px"}}>
-                        Хотелось бы услышать ваше мнение об этом проекте и идеи!
+                        Хотелось бы услышать ваше мнение об этом проекте!
+                        <br></br>
                         Не стесняйтесь оставлять свой отзыв и делиться вашими впечатлениями.
                     </p>
                 </div>
-                <div className="links" style={{marginTop: "87px"}}>
+                <div className="links" style={{marginTop: "100px"}}>
                     <div>
                         <div>
                             <a href="https://github.com/GinKey">
@@ -50,7 +51,6 @@ function SecondPage() {
                     </div>
                 </div>
                 <div className="elli" style={{marginTop: "61px"}}>
-                    <p style={{width: "382px"}}>Отдельная благодарность лучшему дизайнеру <a href="https://github.com/ell-ink"><span className="ellink">ellink</span></a></p>
                     <img className="hide-on-small-screen2" style={{position: "absolute", marginTop:"-350px", marginLeft: "88%"}} src={vectorBot} alt="вектор2"/>
                 </div>
             </div>
